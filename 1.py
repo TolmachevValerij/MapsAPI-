@@ -1,24 +1,16 @@
-import pygame, requests, sys, os
+import pygame
+import requests
+import sys 
+import os
 
 
 
-class MapParams(object):
-    def __init__(self):
-        self.lat = 12.537696  
-        self.lon = 20.151173
-        self.z = 4
-        self.t = "sat"
-
-
-    def ll(self):
-        return '%s%s'%(str(self.lon), '%2C')+"-"+str(self.lat)
-
-def load_map(mp):
-    mrequest = "http://static-maps.yandex.ru/1.x/?ll={ll}&z={z}&l={type}".format(ll=mp.ll(), z=mp.z, type=mp.t)
-    response = requests.get(mrequest)
+def load_map():
+    map_request = "https://static-maps.yandex.ru/1.x/?l=map&pt=65.534121,57.149484~65.540921,57.153502~65.537696,57.151173"
+    response = requests.get(map_request)
     if not response:
         print("Ошибка выполнения запроса:")
-        print(mrequest)
+        print(map_request)
         print("Http статус:", response.status_code, "(", response.reason, ")")
         sys.exit(1)
 
@@ -34,15 +26,14 @@ def load_map(mp):
 def main():
     pygame.init()
     screen = pygame.display.set_mode((600, 450))
-    mp = MapParams()
     while True:
         event = pygame.event.wait()
-        if event.type == pygame.QUIT:  # Выход из программы
+        if event.type == pygame.QUIT:
            break
-        map_file = load_map(mp)
+        map_file = load_map()
         screen.blit(pygame.image.load(map_file), (0, 0))
         pygame.display.flip()
-    pygame.quit()
+    pygame.quit(
     os.remove(map_file)
 
 if __name__ == "__main__":
