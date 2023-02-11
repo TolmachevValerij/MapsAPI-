@@ -2,7 +2,7 @@ import os
 import sys
 import requests
 from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from PyQt5 import uic
 
 
