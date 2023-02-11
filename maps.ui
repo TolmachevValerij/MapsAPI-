@@ -66,6 +66,19 @@ p, li { white-space: pre-wrap; }
     <string>55.703118</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>722</x>
+     <y>250</y>
+     <width>241</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>показать</string>
+   </property>
+  </widget>
   <widget class="QTextEdit" name="mashtab">
    <property name="geometry">
     <rect>
@@ -83,20 +96,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;0.002&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="placeholderText">
-    <string>0.002</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>722</x>
-     <y>250</y>
-     <width>241</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>показать</string>
+    <string>55.703118</string>
    </property>
   </widget>
  </widget>
